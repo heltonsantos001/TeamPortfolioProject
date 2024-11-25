@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
 body{
@@ -104,6 +104,7 @@ section.conteudo{
     line-height: 30px;
     font-weight: 100;
     margin: 20px 0;
+
     
 }
 
@@ -112,37 +113,79 @@ section.conteudo{
     
 }
 
-button{
-    width: 200px;
-    height: 50px;
-    font-size: 18px;
-    background:  linear-gradient(to right, white, rgb(13, 12, 12));
-    border: 0;
-    border-radius: 15px;
-    color: white;
-    cursor: pointer;
-    transition: .5s;
-    margin: 20px 0;
-    font-size: 20px;
-    padding: 15px 30px;
+
+/*Carrossel */
+.slider-container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
     
 }
-button:hover{
-    animation-name: botao;
-    animation-duration: 0.5s;
-    animation-iteration-count: initial;
-    animation-timing-function: ease-in-out;
-    box-shadow: 0 0 50px 20px rgba(255, 255, 255);
+.slider-images{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    transition: width .5s;
+    box-sizing: border-box;
 }
 
-@keyframes botao{
-    0%{
-        transform: scale(1);
-    }
-    100%{
-        transform: scale(1.05);
-    }
+.slider-img{
+    width: 100px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 50px;
+    background: url(../images/roberta1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.slider-img{
+    width: 100px;
+    height: 500px;
+    margin: 10px;
+    border-radius: 50px;
+    background: url(../images/roberta1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.slider-img:nth-child(1){
+    background: url(../images/roberta3.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.slider-img:nth-child(2){
+    background: url(../images/roberta1.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+.slider-img:nth-child(3){
+    background: url(../images/roberta3.jpg);
+    background-position: center;
+    background-size: cover;
 }
 
 
+.slider-img h1{
+    color: rgb(0, 0, 0);
+    position: relative;
+    bottom: 0;
+    left: 30px;
+    opacity: 0;
+    transition: bottom .5s, opacity .5s;
+}
 
+.slider-img:hover{
+    width: 300px;
+    cursor: pointer;
+}
+
+.slider-img:hover h1{
+    opacity: 1;
+    bottom: 25px;
+}
