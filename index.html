@@ -8,54 +8,84 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+
 </head>
 <body>
-    <body>
-        <header>
-            <div class="interface">
-                <section class="menu">
-                    <nav>
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Contato</a></li>
-                            <li><a href="#">Feedback</a></li>
-                        </ul>
-                    </nav>
-                </section>
-            </div>
+    
+        <header>       
+              <nav>
+                <ul>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Contato</a></li>
+                  <li><a href="#">Feedback</a></li>
+                  </ul>
+              </nav>
         </header>
         
         <main>
             <section class="conteudo">
-                <div class="interface">
-                    <div class="txt">
-                        <h1>HELLO, MUNDO.</h1>
-                        <h1><span>CONHEÇA MAIS SOBRE NÓS!</span></h1>
-                        <p>Somos um bando de estudantes viciados em tecnologia 
-                            <span>que resolveu botar a mão na massa e criar um site bem legal! </span>
-                        </span> Aqui você vai encontrar de tudo um pouco, desde códigos até playlists.</span></p>
-                        
-                        </a>
-                    </div>
-                    <div class="slider-container">
-                        <div class="slider-img">
-                        
-                            <h1>Roberta </h1>
-                            <div class="slider-img">
-                        
-                            <h1>Roberta</h1>
-                            <div class="slider-img">
-                        
-                            <h1>Roberta</h1>    
-                            <div class="slider-img">
-                        
-                            <h1>Roberta</h1>    
-                                
-                        </div>
-                    </div>
+                <div id="mainContainer">
+                    
+
+                <div id="mainTop">
+                  <div data-aos="fade-up" data-aos-duration="3000" class="txt">
+                    <h1 class="text">Olá, Bem-vindo ao Team Portfólio</h1>
+                    <p class="text">
+                      Somos um grupo de desenvolvedores e este é o nosso portfólio. Aqui você encontrará um pouco sobre as habilidades e competências de cada membro da equipe. Fique à vontade para explorar e conhecer o site.
+                    </p>
+            </div>
+            <div data-aos="fade-up" data-aos-duration="3000"  id="containerCarrossel">
+              <div class="gallery">
+                <img src="./src/images/roberta.jpg" alt="Desenvolvedores">
+                <img src="./src/images/roberta1.jpg" alt="Desenvolvedores">
+                <img src="./src/images/roberta2.jpg" alt="Desenvolvedores">
+                <img src="./src/images/roberta3.jpg" alt="Desenvolvedores">
+                <img src="https://picsum.photos/id/180/300/300" alt="Desenvolvedores">
+                <img src="https://picsum.photos/id/20/300/300" alt="Desenvolvedores">
+              </div>
+            </div>
                 </div>
+                <div class="container">
+                  <div>
+                    <div class="content">
+                      <h2>Roberta</h2>
+                      <p>Mobile Developer</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="content">
+                      <h2>Helton</h2>
+                      <p>.Net Developer</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="content">
+                      <h2>Larissa</h2>
+                      <p>Developer Front end</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="content">
+                      <h2>Guilherme</h2>
+                      <p>Mobile Developer</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="content">
+                      <h2>Gustavo</h2>
+                      <p>Bom de oral</p>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="content">
+                      <h2>Renato</h2>
+                      <p>Noiado</p>
+                    </div>
+                  </div>
                 </div>
-                
+                      
+                </div>              
             </section>
             
         </main>
@@ -63,5 +93,11 @@
         
     
     <script src="/src/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+     
+      AOS.init();
+  </script>
+
 </body>
 </html>

@@ -5,43 +5,43 @@
     font-family: "Poppins", sans-serif;
 }
 
-body{
-    background-color: rgb(0, 0, 0);
+body{    
+  height: 100vh;
+  background-image: url(../images/fundoHome.jpg);
+  background-repeat: no-repeat;
+  background-size: cover; 
+  background-position: center;
+  color: #fff;
+  padding-bottom: 50px;
 }
 
-.interface{
-    max-width: 1280px;
-    margin: 0 auto;
+html, body {
+  overflow-x: hidden;
 }
-
-/* Estilo do header*/
 
 header{
     width: 100%;
-    padding: 40px 0; 
-    position: fixed;
-    top: 0;
-    left: 0;
+    height: 100px;
 }
 
-header .interface{
+header nav{
     display: flex;
     justify-content: end;
     align-items: center;
 }
 
-header .menu nav ul{
+header  nav ul{
     list-style-type: none;
 }
 
-header .menu nav ul li{
+header  nav ul li{
     display: inline-block;
     margin: 0 40;
     padding: 24px;
     
 }
 
-.menu nav ul li a{
+nav ul li a{
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -66,126 +66,206 @@ nav ul li a:hover::after{
     
 }
 
-/* Estilo main*/
+#mainContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+}
 
-section.conteudo{
-    height: 90vh;
-    background-image: url(../images/imagem.jpg);
-    background-repeat: no-repeat;
-    background-size: cover; 
-    background-position: center;
-    color: white;
-    
+#mainTop{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 50px;
+}
+
+@media (max-width: 1000px) {
+  #mainTop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+  }
 }
 
 
-
-.conteudo .interface{
+.conteudo nav{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     height: 100%;
     
 }
 
 .conteudo .txt h1{
-    font-size: 3em;
+    font-size: 1.5em;
     line-height: 70px;
     font-weight: 200;
 }
 
-.conteudo .txt h1 span{
-    display: block;
-    font-weight: 800;
+.txt{
+  width: 400px;
+}
+
+#containerCarrossel{
+  position: relative;
+}
+
+.gallery {
+  --s: 120px; 
+  
+  display: grid;
+  transform-style: preserve-3d;
+  animation: r 15s linear infinite;
+  position: relative;
+}
+
+@media (max-width: 300px) {
+  .gallery {
+    --s: 100px; 
     
+  }
+
+  .txt{
+    width: 300px;   
+  }
+}
+@keyframes r {
+  0% {transform: perspective(450px) rotateX(-100deg) rotate(0deg)}
+  to {transform: perspective(450px) rotateX(-100deg) rotate(-360deg)}
+}
+.gallery > img {
+  grid-area: 1/1;
+  width: var(--s);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  transform: rotate(var(--_a)) translateY(120%) rotateX(90deg);
+}
+.gallery > img:nth-child(1) {--_a: 0deg}
+.gallery > img:nth-child(2) {--_a: 60deg}
+.gallery > img:nth-child(3) {--_a: 120deg}
+.gallery > img:nth-child(4) {--_a: 180deg}
+.gallery > img:nth-child(5) {--_a: 240deg}
+.gallery > img:nth-child(6) {--_a: 300deg}
+
+.gallery::before {
+  content: "";
+  position: absolute;
+  inset: -100%;
+  clip-path: polygon(50% 0,calc(50% + .866*50%) 25%,calc(50% + .866*50%) 75%,50% 100%,calc(50% - .866*50%) 75%,calc(50% - .866*50%) 25%);
+  background: #99B2B7;
+  transform: translateZ(calc(var(--s)/2)) rotate(90deg);
 }
 
-.txt p{
-    font-size: 18px;
-    line-height: 30px;
-    font-weight: 100;
-    margin: 20px 0;
+.container {
+  margin: 100px;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 300px;
+  gap: 10px;
 
-    
-}
-
-.txt p span{
-    display: block;
-    
-}
-
-
-/*Carrossel */
-.slider-container{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    
-}
-.slider-images{
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    position: fixed;
-    transition: width .5s;
-    box-sizing: border-box;
-}
-
-.slider-img{
-    width: 100px;
-    height: 500px;
-    margin: 10px;
-    border-radius: 50px;
-    background: url(../images/roberta1.jpg);
-    background-size: cover;
-    background-position: center;
-}
-.slider-img{
-    width: 100px;
-    height: 500px;
-    margin: 10px;
-    border-radius: 50px;
-    background: url(../images/roberta1.jpg);
-    background-size: cover;
-    background-position: center;
-}
-
-.slider-img:nth-child(1){
-    background: url(../images/roberta3.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-.slider-img:nth-child(2){
-    background: url(../images/roberta1.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-.slider-img:nth-child(3){
-    background: url(../images/roberta3.jpg);
-    background-position: center;
-    background-size: cover;
-}
-
-
-.slider-img h1{
-    color: rgb(0, 0, 0);
-    position: relative;
-    bottom: 0;
-    left: 30px;
-    opacity: 0;
-    transition: bottom .5s, opacity .5s;
-}
-
-.slider-img:hover{
-    width: 300px;
+  > div {
+    flex: 0 0 120px;
+    border-radius: 0.5rem;
+    transition: 0.5s ease-in-out;
     cursor: pointer;
+    box-shadow: 1px 5px 15px #1e0e3e;
+    position: relative;
+    overflow: hidden;
+
+    &:nth-of-type(1) {
+      background: url("./../images/roberta1.jpg")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(2) {
+      background: url("./../images/roberta2.jpg")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(3) {
+      background: url("./../images/roberta3.jpg")
+        no-repeat 50% / cover;
+    } 
+    &:nth-of-type(4) {
+      background: url("./../images/roberta.jpg")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(5) {
+      background: url("https://images.pexels.com/photos/247322/pexels-photo-247322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+        no-repeat 50% / cover;
+    }
+    &:nth-of-type(6) {
+      background: url("https://images.pexels.com/photos/247322/pexels-photo-247322.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
+        no-repeat 50% / cover;
+    }
+
+    .content {
+      font-size: 1.5rem;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      padding: 0;
+      opacity: 0;
+      flex-direction: column;
+      height: 100%;
+      justify-content: flex-end;
+      background: rgb(2, 2, 46);
+      background: linear-gradient(
+        0deg,
+        rgba(2, 2, 46, 0.6755077030812324) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      transform: translatey(100%);
+      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
+      visibility: hidden;
+
+      p {
+        display: block;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+    }
+
+    &:hover {
+      flex: 0 0 250px;
+      box-shadow: 1px 3px 15px #7645d8;
+      transform: translatey(-30px);
+    }
+
+    &:hover .content {
+      opacity: 1;
+      transform: translatey(0%);
+      visibility: visible;
+    }
+  }
 }
 
-.slider-img:hover h1{
-    opacity: 1;
-    bottom: 25px;
+
+@media (max-width: 1000px) {
+  .container {
+    width: 500px;
+    height: 600px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 10px;
+  }
+
+  .content h2 {
+    font-size: 1rem;
+  }
+
+  
+
+  @media (max-width: 600px) {
+    .container {
+      grid-template-columns: repeat(2, 1fr);/* 2 colunas */
+    }
+  }
 }
+
