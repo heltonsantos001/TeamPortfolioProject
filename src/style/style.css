@@ -5,8 +5,8 @@
     font-family: "Poppins", sans-serif;
 }
 
-body{    
-  height: 100vh;
+body{
+  height: 100vh; 
   background-image: url(../images/fundoHome.jpg);
   background-repeat: no-repeat;
   background-size: cover; 
